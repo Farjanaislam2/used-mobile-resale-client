@@ -1,6 +1,7 @@
 import React from 'react';
 
-const CategoryProduct = ({product}) => {
+
+const CategoryProduct = ({product,setBuyMobile}) => {
   const {name,picture,address,Using,
     originalPrice,
     SellingPrice} = product;
@@ -16,9 +17,14 @@ const CategoryProduct = ({product}) => {
       <h2 className="card-title">use: {Using}years</h2>
       <p>Location: {address}</p>
       <div className="card-actions justify-end">
-        <button className="btn btn-primary">Buy Now</button>
+        
+        <label htmlFor="booking-modal"
+         className="btn btn-success"
+         onClick={()=>setBuyMobile(product)}
+         >Purchase</label>
       </div>
     </div>
+  
   </div>    
   );
 };
