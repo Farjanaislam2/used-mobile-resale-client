@@ -19,8 +19,9 @@ import MyProducts from './../../Pages/MyProducts/MyProducts';
                 element: <Login></Login>
             },
             {
-                path: '/myProduct/:id',
-                element:<MyProducts></MyProducts>
+                path: '/category/:id',
+                element:<MyProducts></MyProducts>,
+                loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             },
             {
                 path:'/blogs',
