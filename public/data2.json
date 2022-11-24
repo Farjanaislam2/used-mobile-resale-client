@@ -1,0 +1,131 @@
+[
+    {
+      "_id": "01",
+      "products": [
+        {
+          "id": 1,
+          "picture": "https://img.freepik.com/free-vector/realistic-display-smartphone-with-different-apps_52683-30241.jpg?size=338&ext=jpg&ga=GA1.2.1819645791.1666648323&semt=sph",
+          "name": "samsung m21",
+          "Buying-price": "$728.48",
+          "Selling-price": "$128.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727",
+           "phone": "+1 (862) 446-2338",
+           "condition": "Good",
+          "Using-year": 1,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 5000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+        },
+        {
+          "id": 2,
+          "picture": "https://img.freepik.com/free-vector/realistic-display-smartphone-with-different-apps_52683-30241.jpg?size=338&ext=jpg&ga=GA1.2.1819645791.1666648323&semt=sph",
+          "name": "samsung m31",
+          "Buying-price": "$2,728.48",
+          "Selling-price": "$2,728.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 2,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+          
+        },
+        {
+          "id": 3,
+          "picture": "https://img.freepik.com/free-psd/smartphone-mockup_1310-920.jpg?size=626&ext=jpg&ga=GA1.2.1819645791.1666648323&semt=sph",
+          "name": "samsung F21",
+          "Buying-price": "$928.48",
+          "Selling-price": "$528.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "Using-year": 3,
+          "condition": "Good",
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+         
+        }
+      ]
+    },
+    {
+      "_id": "02",
+      "friends": [
+        {
+          "id": 1,
+          "picture": "https://www.freepik.com/free-photo/mobile-phone-screen-product-showcase_13462466.htm#query=samsung&position=7&from_view=search&track=sph",
+          "name": "oppo A21",
+          "Buying-price": "$728.48",
+          "Selling-price": "$128.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727",
+           "phone": "+1 (862) 446-2338",
+           "condition": "Good",
+          "Using-year": 1,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 5000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+        },
+        {
+          "id": 2,
+          "picture": "https://www.freepik.com/free-photo/loei-thailand-may-10-2017-hand-holding-samsung-s8-with-mobile-application-instagram-screen_1254943.htm#query=samsung&position=6&from_view=search&track=sph",
+          "name": "oppo f30",
+          "Buying-price": "$2,728.48",
+          "Selling-price": "$2,728.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 2,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+          
+        },
+        {
+          "id": 3,
+          "picture": "https://img.freepik.com/free-psd/smartphone-mockup_1310-920.jpg?size=626&ext=jpg&ga=GA1.2.1819645791.1666648323&semt=sph",
+          "name": "oppo f22",
+          "Buying-price": "$928.48",
+          "Selling-price": "$528.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 3,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+         
+        }
+      ]
+    },
+    {
+      "_id": "03",
+      "friends": [
+        {
+          "id": 1,
+          "picture": "https://www.freepik.com/free-photo/mobile-phone-screen-product-showcase_13462466.htm#query=samsung&position=7&from_view=search&track=sph",
+          "name": "Iphone 12",
+          "Buying-price": "$728.48",
+          "Selling-price": "$128.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 1,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 5000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+        },
+        {
+          "id": 2,
+          "picture": "https://www.freepik.com/free-photo/loei-thailand-may-10-2017-hand-holding-samsung-s8-with-mobile-application-instagram-screen_1254943.htm#query=samsung&position=6&from_view=search&track=sph",
+          "name": "Iphone 13",
+          "Buying-price": "$2,728.48",
+          "Selling-price": "$2,728.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 2,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+          
+        },
+        {
+          "id": 3,
+          "picture": "https://img.freepik.com/free-psd/smartphone-mockup_1310-920.jpg?size=626&ext=jpg&ga=GA1.2.1819645791.1666648323&semt=sph",
+          "name": "Iphone 14",
+          "Buying-price": "$928.48",
+          "Selling-price": "$528.48",
+          "address": "642 Clarkson Avenue, Russellville, Tennessee, 1727", 
+          "phone": "+1 (862) 446-2338",
+          "condition": "Good",
+          "Using-year": 3,
+      "about": " Samsung Galaxy M21 Full Specifications. First Release: March 2020: Colors: Midnight Blue, Raven Black: Connectivity ; Network: 2G, 3G, 4G: SIM: ... Samsung Galaxy M21 gets a MobileDokan score of 8 out of 10. News & Articles: Samsung Galaxy M21 released with 6000 mAh huge battery, 48 MP camera, SAMOLED display\r\n"
+         
+        }
+      ]
+    }
+  
+  ]
