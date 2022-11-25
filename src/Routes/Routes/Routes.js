@@ -35,7 +35,7 @@ import MyOrders from "../../Pages/Dashboard/MyOrders";
          
             {
                 path: '/category/:id',
-                element:<MyProducts></MyProducts>,
+                element:<PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             },
             {
