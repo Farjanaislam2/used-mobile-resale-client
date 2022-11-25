@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Authcontext } from "../../../context/Authprovider";
+import { toast } from 'react-hot-toast';
 
 const BookingModal = ({ buyMobile,setBuyMobile}) => {
-  const { name, SellingPrice } = buyMobile;
+  const { name:productsName, SellingPrice } = buyMobile;
   const {user} = useContext(Authcontext);
 
 const handlPurchase =event =>{
@@ -14,14 +15,30 @@ const handlPurchase =event =>{
     const address = form.address.value;
 
 const buying = {
- productName:name,
+ productName:productsName,
  buyerName:name,
   email,
   phone,
   address
 }
-    console.log(buying)
-    setBuyMobile(null)
+
+fetch('http://localhost:5000/bookings', {
+  method: 'POST',
+  headers:{
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify(buying)
+})
+.then(res => res.json())
+.then(data =>{
+  console.log(data)
+ if(data.acknowledged){
+  setBuyMobile(null)
+  toast.success('Booking confirmed')
+ }
+})
+    
+    
     
 }
 
@@ -36,7 +53,7 @@ const buying = {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">{name}</h3>
+          <h3 className="text-lg font-bold">{productsName}</h3>
 
           <form onSubmit={handlPurchase }>
           <input

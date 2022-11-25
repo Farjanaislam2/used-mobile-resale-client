@@ -4,24 +4,25 @@ import { useQuery} from '@tanstack/react-query'
 
 
 const Categories = () => {
-  const [myProducts, setmyProducts] = useState([]);
+  // const [myProducts, setmyProducts] = useState([]);
   
 
 
-// const {data : myProducts =[] } = useQuery({
-//   queryKey: ["categories", data],
-//   queryFn: () => async() =>{
-//     const res =await  fetch("http://localhost:5000/categories");
-//     const data = await res.json();
-//     return data
-//   }
-// })
+const {data : myProducts =[] } = useQuery({
+  queryKey: ["categories"],
+  queryFn: async() =>{
+    const res =await  fetch("http://localhost:5000/categories");
+    const data = await res.json();
+    return data
+  }
+})
+console.log(myProducts)
 
-  useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((res) => res.json())
-      .then((data) => setmyProducts(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/categories")
+  //     .then((res) => res.json())
+  //     .then((data) => setmyProducts(data));
+  // }, []);
 
   return (
     <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14">
