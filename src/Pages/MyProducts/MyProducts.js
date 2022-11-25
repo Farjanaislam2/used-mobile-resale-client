@@ -22,6 +22,7 @@ const MyProducts = () => {
      buyMobile &&
      <BookingModal
       buyMobile={buyMobile}
+      setBuyMobile={setBuyMobile }
       ></BookingModal>}
    </section>
   );
