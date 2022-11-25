@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from './../../context/Authprovider';
 import { toast } from 'react-hot-toast';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const SignUp = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
   const {createUser,updateUser}=useContext(Authcontext)
-  const [signUpError, setSignUpError] = useState('')
+  const [signUpError, setSignUpError] = useState('');
+const navigate = useNavigate();
 
     const handleSignUp= data =>{
       console.log(data)
@@ -24,7 +26,9 @@ const SignUp = () => {
           displayName: data.name
         }
         updateUser(userInfo)
-        .then(() => {})
+        .then(() => {
+          navigate('/')
+        })
         .catch(err => console.log(err))
       })
       .catch(error =>{
@@ -81,7 +85,7 @@ const SignUp = () => {
         </form>
         <p className="text-green-700 mt-3">Already have an account ? <Link to='/login' className="text-blue-700">login</Link></p>
         <div className="divider">OR</div>
-        <button className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+        <button  className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
       </div>
      
     </div>

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Authcontext } from "../../../context/Authprovider";
 
 const BookingModal = ({ buyMobile,setBuyMobile}) => {
   const { name, SellingPrice } = buyMobile;
+  const {user} = useContext(Authcontext);
 
 const handlPurchase =event =>{
     event.preventDefault();
@@ -46,12 +48,16 @@ const buying = {
             />
             <input
               type="text"
+              defaultValue={user?.displayName}
+              disabled
               name="name"
               placeholder="Your Name"
               className="input input-bordered input-info w-full  mt-3"
             />
             <input
               type="email"
+              defaultValue={user?.email}
+              disabled
               name="email"
               placeholder="Email"
               className="input input-bordered input-info w-full  mt-3"
