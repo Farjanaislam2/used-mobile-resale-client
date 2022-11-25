@@ -6,6 +6,7 @@ const CategoryProduct = ({product,setBuyMobile}) => {
     originalPrice,
     SellingPrice,
   sellerName,
+ 
 postTime} = product;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">

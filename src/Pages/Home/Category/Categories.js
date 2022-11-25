@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery} from '@tanstack/react-query'
+import { Result } from 'postcss';
+import Loading from './../Shared/Loading/Loading';
 
 
 const Categories = () => {
@@ -8,7 +10,7 @@ const Categories = () => {
   
 
 
-const {data : myProducts =[] } = useQuery({
+const {data : myProducts =[],isLoading } = useQuery({
   queryKey: ["categories"],
   queryFn: async() =>{
     const res =await  fetch("http://localhost:5000/categories");
@@ -16,7 +18,10 @@ const {data : myProducts =[] } = useQuery({
     return data
   }
 })
-console.log(myProducts)
+
+if(isLoading){
+  return <Loading></Loading>
+}
 
   // useEffect(() => {
   //   fetch("http://localhost:5000/categories")

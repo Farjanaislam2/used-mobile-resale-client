@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from './../../context/Authprovider';
 import { toast } from 'react-hot-toast';
-import { GoogleAuthProvider } from 'firebase/auth';
+
 
 const SignUp = () => {
     const { register,formState: { errors }, handleSubmit } = useForm();
