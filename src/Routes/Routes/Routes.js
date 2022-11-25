@@ -6,6 +6,7 @@ import Blogs from './../../Pages/Home/Blogs';
 import MyProducts from './../../Pages/MyProducts/MyProducts';
 import SignUp from "../../Pages/SignUp/SignUp";
 import Dashboard from './../../Pages/Dashboard/Dashboard/Dashboard';
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
  const router = createBrowserRouter([
     {
@@ -24,10 +25,7 @@ import Dashboard from './../../Pages/Dashboard/Dashboard/Dashboard';
                 path: '/signup',
                 element: <SignUp></SignUp>
             },
-            {
-                path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            },
+         
             {
                 path: '/category/:id',
                 element:<MyProducts></MyProducts>,
@@ -36,7 +34,11 @@ import Dashboard from './../../Pages/Dashboard/Dashboard/Dashboard';
             {
                 path:'/blogs',
                 element: <Blogs></Blogs>
-            }
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+            } 
         ]
     }
 ])
