@@ -5,6 +5,7 @@ import Login from './../../Pages/Home/Login/Login';
 import Blogs from './../../Pages/Home/Blogs';
 import MyProducts from './../../Pages/MyProducts/MyProducts';
 import SignUp from "../../Pages/SignUp/SignUp";
+import Dashboard from './../../Pages/Dashboard/Dashboard/Dashboard';
 
  const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ import SignUp from "../../Pages/SignUp/SignUp";
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/dashboard',
+                element: <Dashboard></Dashboard>
             },
             {
                 path: '/category/:id',
