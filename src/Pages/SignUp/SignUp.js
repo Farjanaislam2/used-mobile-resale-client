@@ -27,7 +27,7 @@ const navigate = useNavigate();
         }
         updateUser(userInfo)
         .then(() => {
-          navigate('/')
+          saveUser(data.name, data.email);
         })
         .catch(err => console.log(err))
       })
@@ -36,6 +36,22 @@ const navigate = useNavigate();
         setSignUpError(error.message) 
       });
   
+
+      const saveUser = (name,email) =>{
+        const user = {name,email}
+        fetch('http://localhost:5000/users',{
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(user)
+        })
+        .then(res =>res.json())
+        .then(data =>{
+          console.log('saveuser',data);
+          navigate('/')
+        })
+      }
     }
 
     return (
@@ -84,8 +100,7 @@ const navigate = useNavigate();
           {signUpError && <p className='text-red-400'>{signUpError}</p>}
         </form>
         <p className="text-green-700 mt-3">Already have an account ? <Link to='/login' className="text-blue-700">login</Link></p>
-        <div className="divider">OR</div>
-        <button  className="btn btn-outline w-full">CONTINUE WITH GOOGLE</button>
+        
       </div>
      
     </div>
