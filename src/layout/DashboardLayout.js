@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import Navbar from '../Pages/Home/Shared/Navbar/Navbar';
+import useAdmin from '../hooks/useAdmin';
+import { Authcontext } from './../context/Authprovider';
 
 const DashboardLayout = () => {
+  const {user} = useContext(Authcontext)
+  const [isAdmin]= useAdmin(user?.email)
     return (
         <div>
             <div className="drawer drawer-mobile">
@@ -15,8 +18,13 @@ const DashboardLayout = () => {
     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
     
       <li><Link to='/dashboard'>My Orders</Link></li>
-      <li><Link to='/dashboard/allusers'>Users</Link></li>
-      <li><Link to='/dashboard/sellers'>Sellers</Link></li>
+     {
+      isAdmin && <>
+       <li><Link to='/dashboard/allusers'>Users</Link></li>
+       <li><Link to='/dashboard/sellers'>Sellers</Link></li>
+      </>
+     }
+     
       
     </ul>
   </div>

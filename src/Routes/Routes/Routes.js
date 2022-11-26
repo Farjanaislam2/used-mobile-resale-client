@@ -12,6 +12,7 @@ import MyOrders from "../../Pages/Dashboard/MyOrders";
 import Error from "../Error";
 import Allusers from "../../Pages/Dashboard/Allusers/Allusers";
 import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
+import AdminRoute from "./AdminRoute/AdminRoute";
 
  const router = createBrowserRouter([
     {
@@ -55,7 +56,7 @@ import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
                    },
                    {
                     path: '/dashboard/allusers',
-                    element: <Allusers></Allusers>
+                    element: <AdminRoute><Allusers></Allusers></AdminRoute>
                    },
                    {
                     path: '/dashboard/sellers',

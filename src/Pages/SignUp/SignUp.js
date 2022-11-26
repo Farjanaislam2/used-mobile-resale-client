@@ -28,7 +28,7 @@ if(token){
         const user =result.user;
         console.log(user)
         toast('user created successfully')
-        
+
         const userInfo ={
           displayName: data.name
         }
@@ -107,6 +107,10 @@ if(token){
           <input className="btn btn-success w-full mt-5" value='SignUp' type="submit" />
           {signUpError && <p className='text-red-400'>{signUpError}</p>}
         </form>
+      <div className='mt-2'>
+      <input type="radio" name="radio-1" className="radio" checked />
+<input type="radio" name="radio-1" className="radio" />
+      </div>
         <p className="text-green-700 mt-3">Already have an account ? <Link to='/login' className="text-blue-700">login</Link></p>
         
       </div>
