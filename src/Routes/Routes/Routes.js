@@ -11,6 +11,7 @@ import DashboardLayout from "../../layout/DashboardLayout";
 import MyOrders from "../../Pages/Dashboard/MyOrders";
 import Error from "../Error";
 import Allusers from "../../Pages/Dashboard/Allusers/Allusers";
+import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
 
  const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ import Allusers from "../../Pages/Dashboard/Allusers/Allusers";
                    {
                     path: '/dashboard/allusers',
                     element: <Allusers></Allusers>
+                   },
+                   {
+                    path: '/dashboard/sellers',
+                    element: <Sellers></Sellers>
                    },
                 ]
             } 
