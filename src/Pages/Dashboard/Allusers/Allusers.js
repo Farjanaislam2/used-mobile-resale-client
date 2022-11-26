@@ -47,7 +47,6 @@ const handleMakeAdmin =id =>{
             <th>{i+1}</th>
         <td>{user.name}</td>
         <td>{user.email}</td>
-        <td>seller</td>
         <td>{user?.role !== 'admin' && <button onClick={()=>handleMakeAdmin(user._id)} className='btn btn-success'>Make Admin</button>}</td>
         <td><button className='btn btn-secondary'>Delete</button></td>
         </tr>)
