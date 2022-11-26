@@ -5,16 +5,18 @@ import Login from './../../Pages/Home/Login/Login';
 import Blogs from './../../Pages/Home/Blogs';
 import MyProducts from './../../Pages/MyProducts/MyProducts';
 import SignUp from "../../Pages/SignUp/SignUp";
-import Dashboard from './../../Pages/Dashboard/Dashboard/Dashboard';
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import AddProducts from "../../Pages/MyProducts/AddProducts/AddProducts";
 import DashboardLayout from "../../layout/DashboardLayout";
 import MyOrders from "../../Pages/Dashboard/MyOrders";
+import Error from "../Error";
+import Allusers from "../../Pages/Dashboard/Allusers/Allusers";
 
  const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path:'/',
@@ -49,10 +51,15 @@ import MyOrders from "../../Pages/Dashboard/MyOrders";
                    {
                     path: '/dashboard',
                     element: <MyOrders></MyOrders>
-                   }
+                   },
+                   {
+                    path: '/dashboard/allusers',
+                    element: <Allusers></Allusers>
+                   },
                 ]
             } 
         ]
+       
     }
 ])
 
