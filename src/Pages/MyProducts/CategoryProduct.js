@@ -6,13 +6,14 @@ const CategoryProduct = ({product,setBuyMobile}) => {
     originalPrice,
     SellingPrice,
   sellerName,
- 
+ about,
 postTime} = product;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
     <figure><img src={picture} alt="Shoes" /></figure>
     <div className="card-body">
       <h2 className="card-title text-3xl text-green-900 font-bold">{name}</h2>
+      <h2>{about}</h2>
      <div className='flex justify-between mt-3'>
      <h2 className="card-title">Original price:{originalPrice}</h2>
       <h2 className="card-title">Sell:{SellingPrice}</h2>

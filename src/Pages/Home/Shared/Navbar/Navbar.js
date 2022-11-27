@@ -15,12 +15,6 @@ const Navbar = () => {
       <li>
         <Link to='/'>Home</Link>
       </li>
-      <li>
-        <Link to='/addProduct'>Add a Product</Link>
-      </li>
-      <li>
-        <Link to='/myProduct'>My Products</Link>
-      </li>
       
       <li>
         <Link to='/blogs'>Blogs</Link>
