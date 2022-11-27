@@ -1,11 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import { Authcontext } from './../context/Authprovider';
+import useSeller from './../hooks/useSeller';
+import { useEffect} from "react"
+import { FaSlack } from 'react-icons/fa';
 
 const DashboardLayout = () => {
   const {user} = useContext(Authcontext)
   const [isAdmin]= useAdmin(user?.email)
+  const [isSeller]= useSeller(user?.email)
+// const [seller, setSeller]= useState(false)
+
+  // useEffect( ()=>{
+   
+  //       fetch(`http://localhost:5000/users/sellers/${user.email}`)
+  //       .then(res =>res.json())
+  //       .then(data =>{
+  //           setSeller(data.isSeller)
+  //       })
+  //   }
+  //       ,[user.email])
+
+
+  //       console.log(seller)
     return (
         <div>
             <div className="drawer drawer-mobile">
@@ -22,9 +40,20 @@ const DashboardLayout = () => {
       isAdmin && <>
        <li><Link to='/dashboard/allusers'>Users</Link></li>
        <li><Link to='/dashboard/sellers'>Sellers</Link></li>
+       {/* <li><Link to='/dashboard/addProduct'>Add Product</Link></li> */}
+     
+      </>
+     }
+
+     {
+      isSeller && <>
+        <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
+        <li><Link to='/dashboard/myProduct'>My Product</Link></li>
       </>
      }
      
+      
+      
       
     </ul>
   </div>

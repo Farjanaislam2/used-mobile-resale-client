@@ -13,6 +13,7 @@ import Error from "../Error";
 import Allusers from "../../Pages/Dashboard/Allusers/Allusers";
 import Sellers from "../../Pages/Dashboard/Sellers/Sellers";
 import AdminRoute from "./AdminRoute/AdminRoute";
+import MyProduct from "../../Pages/MyProducts/MyProduct";
 
  const router = createBrowserRouter([
     {
@@ -46,6 +47,7 @@ import AdminRoute from "./AdminRoute/AdminRoute";
                 path:'/blogs',
                 element: <Blogs></Blogs>
             },
+           
             {
                 path: '/dashboard',
                 element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
@@ -60,8 +62,17 @@ import AdminRoute from "./AdminRoute/AdminRoute";
                    },
                    {
                     path: '/dashboard/sellers',
-                    element: <Sellers></Sellers>
+                    element: <AdminRoute><Sellers></Sellers></AdminRoute>
                    },
+                   {
+                    path:'/dashboard/addProduct',
+                    element:<AddProducts></AddProducts>
+                },
+                {
+                    path:'/dashboard/myProduct',
+                    element:<MyProduct></MyProduct>
+                },
+                  
                 ]
             } 
         ]

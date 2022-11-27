@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
 
 const Sellers = () => {
-    const {data: sellers =[]} = useQuery({
+    const {data: sellers =[],refetch} = useQuery({
         queryKey: ['sellers'],
         queryFn: async()=>{
             const res = await fetch('http://localhost:5000/sellers',{
@@ -15,6 +16,22 @@ const Sellers = () => {
             return data;
         }
     })
+
+
+    const handleMakeVerify =email =>{
+        fetch(`http://localhost:5000/users/sellers/${email}`,{
+          method: 'PUT',
+          headers:{
+            authorization: `bearer ${localStorage.getItem('accessToken')}`
+        }
+        })
+        .then(res =>res.json())
+        .then(data =>{
+       console.log(data)
+        })
+      }
+
+
     return (
         <div>
             <h1 className='text-3xl text-center mt-5 font-bold text-green-500'>All Sellers</h1>
@@ -22,11 +39,12 @@ const Sellers = () => {
   <table className="table w-full">
     <thead>
       <tr>
-        <th></th>
+      <th></th>
         <th>Name</th>
         <th>Email</th>
-        <th>Seller</th>
+        <th>Verify</th>
         <th>Delete</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -35,8 +53,7 @@ const Sellers = () => {
             <th>{i+1}</th>
         <td>{seller.name}</td>
         <td>{seller.email}</td>
-        <td>seller</td>
-        <td><button className='btn btn-success'>Make Seller</button></td>
+        <td>{sellers?.role !== 'admin' && <button onClick={()=>handleMakeVerify(sellers.sellerEmail)} className='btn btn-success'>Verify seller</button>}</td>
         <td><button className='btn btn-secondary'>Delete</button></td>
         </tr>)
         }
