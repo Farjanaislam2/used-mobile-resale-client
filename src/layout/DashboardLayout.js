@@ -3,8 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import { Authcontext } from './../context/Authprovider';
 import useSeller from './../hooks/useSeller';
-import { useEffect} from "react"
-import { FaSlack } from 'react-icons/fa';
+
 
 const DashboardLayout = () => {
   const {user} = useContext(Authcontext)
@@ -40,7 +39,6 @@ const DashboardLayout = () => {
       isAdmin && <>
        <li><Link to='/dashboard/allusers'>Users</Link></li>
        <li><Link to='/dashboard/sellers'>Sellers</Link></li>
-       {/* <li><Link to='/dashboard/addProduct'>Add Product</Link></li> */}
      
       </>
      }
