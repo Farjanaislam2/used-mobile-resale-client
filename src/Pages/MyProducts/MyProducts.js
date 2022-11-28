@@ -7,8 +7,8 @@ import toast from "react-hot-toast";
 
 const MyProducts = () => {
   const [product,setProduct] =useState({})
+  console.log(product)
   const {id} =useParams()
-  console.log(id)
 useEffect( ()=>{
   fetch(`https://used-product-resale-market-server.vercel.app/singlecategories/${id}`)
   .then(res =>res.json())
@@ -31,7 +31,7 @@ if(product.title){
 }
     setLoading(false)
   }, [product, loading])
-console.log(products)
+//console.log(products)
 
 const handleReport = id =>{
   fetch(`https://used-product-resale-market-server.vercel.app/allProducts/${id}`,{

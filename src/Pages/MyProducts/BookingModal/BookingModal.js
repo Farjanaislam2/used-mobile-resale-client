@@ -3,7 +3,8 @@ import { Authcontext } from "../../../context/Authprovider";
 import { toast } from 'react-hot-toast';
 
 const BookingModal = ({ buyMobile,setBuyMobile}) => {
-  const { name:productsName, SellingPrice } = buyMobile;
+  const { Brand, sellingPrice } = buyMobile;
+  console.log(buyMobile)
   const {user} = useContext(Authcontext);
 
 const handlPurchase =event =>{
@@ -13,14 +14,18 @@ const handlPurchase =event =>{
     const email = form.email.value;
     const phone = form.phone.value;
     const address = form.address.value;
+    
 
 const buying = {
- productName:productsName,
+ Brand,
  buyerName:name,
   email,
   phone,
-  address
+  address,
+  sellingPrice
+
 }
+
 
 fetch('https://used-product-resale-market-server.vercel.app/bookings', {
   method: 'POST',
@@ -38,8 +43,6 @@ fetch('https://used-product-resale-market-server.vercel.app/bookings', {
  }
 })
     
-    
-    
 }
 
   return (
@@ -53,14 +56,15 @@ fetch('https://used-product-resale-market-server.vercel.app/bookings', {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">{productsName}</h3>
+          <h3 className="text-lg font-bold">{Brand}</h3>
 
           <form onSubmit={handlPurchase }>
+        
           <input
               type="text"
               name="price"
               disabled
-              value={SellingPrice}
+              value={sellingPrice}
               className="input input-bordered input-info w-full  mt-3"
             />
             <input

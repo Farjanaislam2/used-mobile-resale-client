@@ -14,7 +14,7 @@ const CategoryProduct = ({ product, setBuyMobile, handleReport }) => {
     about,
     postTime,
   } = product;
-  console.log(product);
+  //console.log(product);
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
