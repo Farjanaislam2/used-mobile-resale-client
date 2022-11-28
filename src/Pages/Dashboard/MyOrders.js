@@ -40,7 +40,7 @@ const MyOrders = () => {
             <tr key={booking._id}>
                 <th>{i+1}</th>
                 <th>{booking.buyerName}</th>
-                <th>{booking.productName}</th>
+                <th>{booking.Brand}</th>
                 <th>{booking.phone}</th>
                 <th>{booking.address}</th>
                 
