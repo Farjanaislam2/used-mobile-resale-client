@@ -51,9 +51,11 @@ const MyProduct = () => {
                <h2 className="card-title">Sell:{myProduct.sellingPrice}</h2>
               </div>
                <h2 className="card-title">use: {myProduct.year}years</h2>
+               <h2 className="card-title">condition: {myProduct.condition}</h2>
                <p className='text-green-500 mt-2 mb-2'>Location: {myProduct.address}</p>
                <div className="card-actions justify-end">
                  <p> <small>SellerName :  {myProduct.sellerName}</small> </p>
+                 <p> <small>Mobile : {myProduct.phone}</small> </p>
 
                  <label htmlFor="booking-modal"
                   className="btn btn-success mt-2"
