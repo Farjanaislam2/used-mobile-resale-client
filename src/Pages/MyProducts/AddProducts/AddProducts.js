@@ -3,8 +3,12 @@ import { useQuery } from "@tanstack/react-query";
 import Loading from "./../../Home/Shared/Loading/Loading";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Authcontext } from './../../../context/Authprovider';
+import { useContext } from "react";
 
 const AddProducts = () => {
+  const {user} = useContext(Authcontext)
+  console.log(user)
   const {register, formState: { errors }, handleSubmit,}= useForm();
 
   const imgHostingKey =process.env.REACT_APP_imgbb_key
@@ -22,6 +26,7 @@ const AddProducts = () => {
   });
 
   const handleAddProduct = (data) => {
+
     const image = data.image[0];
     const formData = new FormData();
     formData.append('image', image);
@@ -39,10 +44,11 @@ const AddProducts = () => {
           sellerName:data.sellerName,
           condition:data.condition,
           email:data.email,
-          category:data.category,
-          image:imgData.data.url,
+          Brand:data.category,
+          picture:imgData.data.url,
           address:data.address,
           about:data.about,
+          sellerEmail:user?.email,
           phone:data.phone,
           buyingPrice:data.buyingPrice,
           sellingPrice:data.sellingPrice,
@@ -120,6 +126,7 @@ const AddProducts = () => {
               </label>
 
               <input
+              defaultValue={user?.email}
                 type="email"
                 {...register("email", { required: "email is required" })}
                 className="input input-bordered w-full max-w-xs"
@@ -154,12 +161,14 @@ const AddProducts = () => {
             <select
               {...register("category", { required: "category is required" })}
               className="select select-success w-full max-w-xs"
-            >
-              {addedProducts.map((addedProduct) => (
+            ><option value="Samsung">Samsung</option>
+            <option value="Oppo">Oppo</option>
+            <option value="Iphone">Iphone</option>
+              {/* {addedProducts.map((addedProduct) => (
                 <option key={addedProduct._id} value={addedProduct.title}>
                   {addedProduct.title}
                 </option>
-              ))}
+              ))} */}
             </select>
           </div>
           <div className="flex">

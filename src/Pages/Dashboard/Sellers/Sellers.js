@@ -1,9 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { useState } from 'react';
+import ConfirmModal from './../../Home/Shared/ConfirmModal/ConfirmModal';
 
 
 const Sellers = () => {
+  const [deleteSeller, setDeleteSeller] =useState(null)
+
+const closeModal = ()=>{
+  setDeleteSeller(null);
+}
+
     const {data: sellers =[],refetch} = useQuery({
         queryKey: ['sellers'],
         queryFn: async()=>{
@@ -54,11 +62,20 @@ const Sellers = () => {
         <td>{seller.name}</td>
         <td>{seller.email}</td>
         <td>{sellers?.role !== 'admin' && <button onClick={()=>handleMakeVerify(sellers.sellerEmail)} className='btn btn-success'>Verify seller</button>}</td>
-        <td><button className='btn btn-secondary'>Delete</button></td>
+        <label onClick={()=> setDeleteSeller(seller)} htmlFor="confirm-modal" className="btn mt-5 btn-secondary">
+              Delete
+            </label>
         </tr>)
         }
     </tbody>
   </table>
+  {
+    deleteSeller && <ConfirmModal>
+title={`Are you sure you want to delete?`}
+message={`if you delete ${deleteSeller.name} you cannot be undone.`}
+closeModal={closeModal}
+    </ConfirmModal>
+  }
 </div>
         </div>
     );

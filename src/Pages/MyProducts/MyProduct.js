@@ -9,10 +9,10 @@ const MyProduct = () => {
     const {user} = useContext(Authcontext)
     const [isSeller]= useSeller(user?.email)
     const {data:myProducts, isLoading } =useQuery({
-        queryKey: ['myProducts'],
+        queryKey: ['myProducts',user?.email],
         queryFn: async () =>{
             try{
-                const res =await fetch('http://localhost:5000/myProducts',{
+                const res =await fetch(`http://localhost:5000/myProducts/${user?.email}`,{
                     headers:{
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
 
@@ -40,8 +40,9 @@ const MyProduct = () => {
         <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 '>
         {
              
+
              myProducts.map(myProduct => <div className="card w-96  bg-base-100 shadow-xl">
-             <figure><img src={myProduct.image} alt="Shoes" /></figure>
+             <figure><img src={myProduct.picture} alt="Shoes" /></figure>
              <div className="card-body">
                <h2 className="card-title text-3xl text-green-900 font-bold">{myProduct.productName}</h2>
                <h2>{myProduct.about}</h2>

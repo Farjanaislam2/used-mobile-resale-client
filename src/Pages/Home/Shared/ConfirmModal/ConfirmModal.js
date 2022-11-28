@@ -1,25 +1,23 @@
 import React from "react";
 
-const ConfirmModal = () => {
+const ConfirmModal = ({title,message,closeModal}) => {
   return (
     <div>
-      <label htmlFor="confirm-modal" className="btn">
-        open modal
-      </label>
       <input type="checkbox" id="confirm-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box">
           <h3 className="font-bold text-lg">
-            Congratulations random Internet user!
+            {title}
           </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <p className="py-4">{message}</p>
           <div className="modal-action">
             <label htmlFor="confirm-modal" className="btn">
-              Yay!
+              Yes!
             </label>
+            <button onClick={closeModal} className="btn btn-info">
+              cancel!
+            </button>
+            
           </div>
         </div>
       </div>
