@@ -11,7 +11,7 @@ const Report = () => {
     const { data: reported = [], refetch } = useQuery({
         queryKey: ["reported"],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/reportedProducts', {
+            const res = await fetch('https://used-product-resale-market-server.vercel.app/reportedProducts', {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -26,7 +26,7 @@ const Report = () => {
     }
 
     const handleDeletdReport = report => {
-        fetch(`http://localhost:5000/reportedProducts/${report._id}`, {
+        fetch(`https://used-product-resale-market-server.vercel.app/reportedProducts/${report._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -1,27 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import CategoryProduct from "./CategoryProduct";
 import BookingModal from './BookingModal/BookingModal';
 import Loading from "../Home/Shared/Loading/Loading";
 import toast from "react-hot-toast";
 
 const MyProducts = () => {
-  const product = useLoaderData();
+  const [product,setProduct] =useState({})
+  const {id} =useParams()
+  console.log(id)
+useEffect( ()=>{
+  fetch(`https://used-product-resale-market-server.vercel.app/singlecategories/${id}`)
+  .then(res =>res.json())
+  .then(res =>{
+    setProduct(res)
+    console.log(res)
+  })
+},[id])
+  // const product = useLoaderData();
   const [loading, setLoading] = useState(true)
-  console.log(product.title)
+  // console.log(product.title)
   const [buyMobile, setBuyMobile] = useState(null);
 const [products, setProducts] = useState([])
 
   useEffect(() =>{
-    fetch(`http://localhost:5000/allProducts/${product.title}`)
-    .then(res =>res.json())
-    .then(data => setProducts(data))
+if(product.title){
+  fetch(`https://used-product-resale-market-server.vercel.app/allProducts/${product.title}`)
+  .then(res =>res.json())
+  .then(data => setProducts(data))
+}
     setLoading(false)
-  }, [product.title, loading])
+  }, [product, loading])
 console.log(products)
 
 const handleReport = id =>{
-  fetch(`http://localhost:5000/allProducts/${id}`,{
+  fetch(`https://used-product-resale-market-server.vercel.app/allProducts/${id}`,{
       method: 'PUT',
       headers: {
           authorization: `bearer ${localStorage.getItem('accessToken')}`

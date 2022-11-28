@@ -13,7 +13,7 @@ const DashboardLayout = () => {
 
   // useEffect( ()=>{
    
-  //       fetch(`http://localhost:5000/users/sellers/${user.email}`)
+  //       fetch(`https://used-product-resale-market-server.vercel.app/users/sellers/${user.email}`)
   //       .then(res =>res.json())
   //       .then(data =>{
   //           setSeller(data.isSeller)

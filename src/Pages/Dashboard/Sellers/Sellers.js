@@ -15,7 +15,7 @@ const Sellers = () => {
   const { data: sellers = [], refetch } = useQuery({
     queryKey: ["sellers"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/sellers", {
+      const res = await fetch("https://used-product-resale-market-server.vercel.app/sellers", {
         headers: {
           authorization: `bearer ${localStorage.getItem("accessToken")}`,
         },
@@ -27,7 +27,7 @@ const Sellers = () => {
   });
 
   const handleMakeVerify = (email) => {
-    fetch(`http://localhost:5000/users/sellers/${email}`, {
+    fetch(`https://used-product-resale-market-server.vercel.app/users/sellers/${email}`, {
       method: "PUT",
       headers: {
         authorization: `bearer ${localStorage.getItem("accessToken")}`,
@@ -41,7 +41,7 @@ const Sellers = () => {
   };
 
   const handleDeleteSeller = (seller) => {
-    fetch( `http://localhost:5000/sellers/${seller._id}`,{
+    fetch( `https://used-product-resale-market-server.vercel.app/sellers/${seller._id}`,{
       method: 'DELETE',
       headers:{
         authorization: `bearer ${localStorage.getItem('accessToken')}`

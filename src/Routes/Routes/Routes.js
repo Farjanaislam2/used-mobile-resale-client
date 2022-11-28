@@ -43,7 +43,7 @@ import Report from "../../Pages/Dashboard/Report/Report";
             {
                 path: '/category/:id',
                 element:<PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+                // loader: ({params}) => fetch(`https://used-product-resale-market-server.vercel.app/categories/${params.id}`)
             },
             {
                 path:'/blogs',
