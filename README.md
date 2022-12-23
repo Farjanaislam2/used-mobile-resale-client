@@ -1,7 +1,7 @@
 # Welcome to Used Product Resale Project
 # Client Side 
 
-Live site: 
+Live site: https://second-hand-phone.web.app/
 
 * Use react hot toast
 * Use react hook form
